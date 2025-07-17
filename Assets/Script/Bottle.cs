@@ -13,4 +13,5 @@ public class Bottle : MonoBehaviour
     {
         transform.rotation = Quaternion.identity;
     }
+   
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1ae78bba183a644c88813d7b441b589
+guid: 6b8e01926749cf14884c22fe26baf7f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6861894420282137670
-    second: person_0
+      213: -3616075707040771709
+    second: gun2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: person_0
+      name: gun2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 360
+        width: 541
+        height: 401
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64cd62f8e985a3f50800000000000000
-      internalID: 6861894420282137670
+      spriteID: 3815ae0ad4e11ddc0800000000000000
+      internalID: -3616075707040771709
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      person_0: 6861894420282137670
+      gun2_0: -3616075707040771709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
