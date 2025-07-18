@@ -24,7 +24,7 @@ public class BottleCircleSpawner : MonoBehaviour
         }
 
         // Đảm bảo pivot của GameObject cha ở (0, 0, 0)
-        transform.localPosition =new Vector3(0f,300f,0f); ;
+        transform.localPosition =new Vector3(0f,350f,0f); ;
       //  transform.localRotation = Quaternion.identity; // Đặt rotation của cha về 0
 
         SpawnBottles();
@@ -54,11 +54,14 @@ public class BottleCircleSpawner : MonoBehaviour
 
             Vector3 spawnPos = new Vector3(x, y, 0f) + transform.position;
             Debug.Log($"spawnPos:{spawnPos}");
-            Instantiate(bottlePrefab, spawnPos, Quaternion.identity, transform);
+            GameObject bottle = Instantiate(bottlePrefab, spawnPos, Quaternion.identity, transform);
+            Debug.Log(bottle.tag);
         }
 
-      
+
     }
+
+
 
     // Cập nhật khi thay đổi thông số trong Inspector
     private void OnValidate()
