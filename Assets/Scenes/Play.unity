@@ -392,7 +392,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!1 &418460183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,9 +1553,9 @@ GameObject:
   - component: {fileID: 995258504}
   - component: {fileID: 995258505}
   - component: {fileID: 995258506}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottleCircle
-  m_TagString: Untagged
+  m_TagString: Bottle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1746,6 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crosshair: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!1 &1230242628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,11 +2068,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639cbd3a67280d34dbf996be032a9b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 312331147}
-  collisionThreshold: 0.5
+  crosshair: {fileID: 312331146}
+  mainCamera: {fileID: 519420031}
   bottleLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!4 &1747508965
 Transform:
   m_ObjectHideFlags: 0

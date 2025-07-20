@@ -8,16 +8,16 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Gun : MonoBehaviour
 {
 
-    [SerializeField] private float moveDistance = 2.0f; // Khoảng cách di chuyển lên
-    [SerializeField] private float moveSpeed = 10f; // Tốc độ di chuyển lên
-    [SerializeField] private float returnSpeed = 10f; // Tốc độ trở về
-    [SerializeField] private float moveDuration = 0.3f; // Thời gian di chuyển lên
-    [SerializeField] private bool useWorldPosition = false; // Tùy chọn dùng world position
+    [SerializeField] private float moveDistance = 2.0f; 
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float returnSpeed = 10f;
+    [SerializeField] private float moveDuration = 0.3f;
+    [SerializeField] private bool useWorldPosition = false;
 
-    private Vector3 originalPosition; // Vị trí ban đầu
-    private bool isMoving = false; // Trạng thái di chuyển
-    private float moveTimer = 0f; // Bộ đếm thời gian
-    private Vector3 targetPosition; // Vị trí đích khi di chuyển lên
+    private Vector3 originalPosition; 
+    private bool isMoving = false; 
+    private float moveTimer = 0f;
+    private Vector3 targetPosition; 
 
     private void Start()
     {
@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
             {
                 isMoving = true;
                 moveTimer = 0f;
-                targetPosition = originalPosition + new Vector3(0, moveDistance, 0); // Di chuyển lên theo trục Y
+                targetPosition = originalPosition + new Vector3(0, moveDistance, 0); 
             }
         }
         else if (Input.touchCount > 0 && Application.isMobilePlatform)

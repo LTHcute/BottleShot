@@ -10,19 +10,7 @@ public class BottleCircleSpawner : MonoBehaviour
 
     private void Start()
     {
-        // Kiểm tra prefab
-        if (bottlePrefab == null)
-        {
-            Debug.LogError("Bottle Prefab is not assigned in the Inspector!");
-            return;
-        }
-
-        if (bottlePrefab.GetComponent<SpriteRenderer>() == null)
-        {
-            Debug.LogError("Bottle Prefab has no SpriteRenderer component!");
-            return;
-        }
-
+       
         // Đảm bảo pivot của GameObject cha ở (0, 0, 0)
         transform.localPosition =new Vector3(0f,350f,0f); ;
       //  transform.localRotation = Quaternion.identity; // Đặt rotation của cha về 0
