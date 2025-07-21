@@ -39,25 +39,12 @@ public class BottleCircleSpawner : MonoBehaviour
             // Tính vị trí trên vòng tròn
             float x = Mathf.Cos(angle) * radius;
             float y = Mathf.Sin(angle) * radius;
-
             Vector3 spawnPos = new Vector3(x, y, 0f) + transform.position;
-            Debug.Log($"spawnPos:{spawnPos}");
             GameObject bottle = Instantiate(bottlePrefab, spawnPos, Quaternion.identity, transform);
-            Debug.Log(bottle.tag);
+            
         }
 
 
-    }
-
-
-
-    // Cập nhật khi thay đổi thông số trong Inspector
-    private void OnValidate()
-    {
-        if (Application.isPlaying)
-        {
-            SpawnBottles();
-        }
     }
 
 
