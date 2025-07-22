@@ -1594,7 +1594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -148.76, y: 447}
+  m_AnchoredPosition: {x: -148.76, y: 254.62}
   m_SizeDelta: {x: 297.53, y: 213.2309}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726486350
@@ -2074,6 +2074,8 @@ MonoBehaviour:
   bottlePrefab: {fileID: 8462950200072976387, guid: 42b088223b8d4c94384aa79d732a10e6, type: 3}
   numberOfBottles: 6
   radius: 350
+  rotator: {fileID: 0}
+  initialRotationSpeed: 30
 --- !u!114 &995258506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2808,7 +2810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 301, y: -521}
+  m_AnchoredPosition: {x: 301, y: -705.38}
   m_SizeDelta: {x: 44.3672, y: 155.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075988515

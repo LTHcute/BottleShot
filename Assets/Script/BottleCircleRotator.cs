@@ -9,6 +9,11 @@ public class BottleCircleRotator : MonoBehaviour
     {
         
     }
+    public void SetRotationSpeed(float newSpeed)
+    {
+        rotationSpeed = newSpeed;
+        Debug.Log($"Tốc độ xoay được cập nhật: {rotationSpeed}");
+    }
 
     // Update is called once per frame
     void Update()
