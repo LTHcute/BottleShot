@@ -388,8 +388,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 638704852}
+  m_Children: []
   m_Father: {fileID: 49904004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -447,7 +446,8 @@ GameObject:
   - component: {fileID: 312331149}
   - component: {fileID: 312331148}
   - component: {fileID: 312331150}
-  m_Layer: 9
+  - component: {fileID: 312331151}
+  m_Layer: 0
   m_Name: Crosshair
   m_TagString: Crosshair
   m_Icon: {fileID: 0}
@@ -470,8 +470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.0771, y: 17.2011}
-  m_SizeDelta: {x: 95.8682, y: 92.659}
+  m_AnchoredPosition: {x: 7.0982, y: 16.6978}
+  m_SizeDelta: {x: 77.8836, y: 83.6668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312331148
 MonoBehaviour:
@@ -546,7 +546,34 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.1
+  m_Radius: 30
+--- !u!50 &312331151
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312331146}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &418460183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,12 +1407,12 @@ RectTransform:
   - {fileID: 749814952}
   - {fileID: 533875783}
   - {fileID: 1416192964}
-  m_Father: {fileID: 217062700}
+  m_Father: {fileID: 1230242632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
-  m_SizeDelta: {x: 118.48169, y: 1604.6204}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638704853
 MonoBehaviour:
@@ -1645,6 +1672,7 @@ GameObject:
   - component: {fileID: 749814952}
   - component: {fileID: 749814954}
   - component: {fileID: 749814953}
+  - component: {fileID: 749814955}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -1709,6 +1737,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749814951}
   m_CullTransparentMesh: 1
+--- !u!114 &749814955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749814951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 749814953}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &918688867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,10 +1849,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1230242632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -206.01}
-  m_SizeDelta: {x: 1080, y: 2332.0127}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -206.01001}
+  m_SizeDelta: {x: 0, y: 412.0127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980232932
 MonoBehaviour:
@@ -2085,9 +2157,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1230242632}
   m_LocalEulerAnglesHint: {x: -5.812, y: 0.409, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.983, y: -679.4919}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 15.983, y: 280.50812}
   m_SizeDelta: {x: 1011.2304, y: 771.9867}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204788442
@@ -2260,6 +2332,7 @@ RectTransform:
   - {fileID: 726486349}
   - {fileID: 2075988514}
   - {fileID: 1334644694}
+  - {fileID: 638704852}
   - {fileID: 49904004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2301,10 +2374,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1230242632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 425.16626, y: 868.44415}
-  m_SizeDelta: {x: 106.0571, y: 93.7122}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -114.83374, y: -91.55585}
+  m_SizeDelta: {x: 106.05713, y: 93.71216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334644695
 MonoBehaviour:
@@ -2601,12 +2674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639cbd3a67280d34dbf996be032a9b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crosshair: {fileID: 312331147}
+  crosshair: {fileID: 312331146}
   mainCamera: {fileID: 519420031}
-  bottleLayer:
+  crosshairLayer:
     serializedVersion: 2
-    m_Bits: 768
-  collisionThreshold: 0.5
+    m_Bits: 512
   pause: {fileID: 1334644695}
   continueButton: {fileID: 577419225}
   store: {fileID: 495507877}

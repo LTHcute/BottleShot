@@ -11,7 +11,7 @@ public class Store : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        CloseStore();
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class Store : MonoBehaviour
     void Hide()
     {
         store.SetActive(false);
+
 
     }
 

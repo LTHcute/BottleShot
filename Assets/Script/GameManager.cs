@@ -1,16 +1,19 @@
 ﻿using JetBrains.Annotations;
+using System.Collections.Generic;
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
-    public Transform crosshair;
+    public GameObject crosshair;
     public Camera mainCamera;
-    public LayerMask bottleLayer;
+    public LayerMask crosshairLayer;
     private GameObject[] bottles;
     private Vector2[] lastPositions;
-    public float collisionThreshold = 0.1f;
+   // public float collisionThreshold = 0.1f;
+
+
     private bool isPause = false;
     public Image pause;
     public Image continueButton;
@@ -21,75 +24,40 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         bottles = GameObject.FindGameObjectsWithTag("Bottle");
-        Debug.Log($"bottles:{bottles.Length}");
-      
-        lastPositions =new Vector2[bottles.Length];
+        Debug.Log(bottles.Length);
+        lastPositions = new Vector2[bottles.Length];
         for (int i = 0; i < bottles.Length; i++)
         {
             if (bottles[i] != null)
-            {
                 lastPositions[i] = bottles[i].transform.position;
-            }
         }
-        if (bottleLayer.value == 0)
-        {
-            Debug.Log("bottleLayer is not set!");
-        }
+        
+
+
         OpenMenu();
-       HideMenu();
+        HideMenu();
         OpenStore();
     }
-    private void Update()
+    void Update()
     {
-        if (crosshair == null) return;
-        Vector2 crosshairPos = crosshair.transform.position;
-        Debug.Log($"Crosshair:{crosshairPos}");
-        Debug.Log($"bottles:{bottles.Length}");
-        for (int i = 0; i < bottles.Length; i++)
+      
+        // Kiểm tra input: Mouse cho Editor, Touch cho di động
+        if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
         {
-            GameObject bottle = bottles[i];
-            if (bottle != null)
+            Debug.Log("CHạm");
+            
+         
+        }
+        else if (Input.touchCount > 0 && Application.isMobilePlatform)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                Vector2 currentPosition = bottle.transform.position;
-                Vector2 lastPosition = lastPositions[i];
-                Vector2 direction = currentPosition - lastPosition;
-                float distance = direction.magnitude;
-                RaycastHit2D hit = Physics2D.Raycast(lastPosition, direction.normalized, distance, bottleLayer);
-                if(hit.collider == null)
-                {
-                    Debug.Log("No hit");
-                }
-              //  Debug.Log($"collider:{hit.collider.transform}");
-                // Kiểm tra xem tia có chạm vào Collider của crosshair không
-                if (hit.collider != null && hit.collider.transform == crosshair)
-                {
-                    Debug.Log($"Chai {bottle.name} đi qua tâm ngắm tại điểm: {hit.point}");
-                    // Xử lý logic, ví dụ: gây sát thương, hủy chai
-                    // Destroy(bottle);
-                }
-                else
-                {
-                    Debug.Log("1");
-                    // Kiểm tra khoảng cách tĩnh (như mã gốc của bạn) để dự phòng
-                    float staticDistance = Vector2.Distance(crosshairPos, currentPosition);
-                    if (staticDistance <= collisionThreshold)
-                    {
-                        Debug.Log($"Chai {bottle.name} chạm tâm ngắm (theo khoảng cách tĩnh)");
-                    }
-                }
-
-                // Vẽ tia để debug
-                Debug.DrawRay(lastPosition, direction, Color.red);
-
-                // Cập nhật vị trí trước đó
-                lastPositions[i] = currentPosition;
-            }
-            else
-            {
-                Debug.Log($"Chai {i} là null");
+                Debug.Log("Chạm");
             }
         }
     }
+
 
     public void OpenMenu()
     {
