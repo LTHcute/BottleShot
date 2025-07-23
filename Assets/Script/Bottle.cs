@@ -2,22 +2,24 @@
 
 public class Bottle : MonoBehaviour
 {
+   
+    //public BottleCircleSpawner bottleCircleSpawner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+      
         // Debug thông tin khởi tạo
         Collider2D collider = GetComponent<Collider2D>();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         GameObject crosshair = GameObject.FindWithTag("Crosshair");
 
-  
 
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+
         transform.rotation = Quaternion.identity;
         // Debug vị trí mỗi frame
         GameObject crosshair = GameObject.FindWithTag("Crosshair");
@@ -27,10 +29,19 @@ public class Bottle : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        int currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
+        int myBulletCount = PlayerPrefs.GetInt("myBulletCount", 1);
+        if (currentBulletCount == 0 && myBulletCount ==0)
+        {
+            Debug.Log("Hết đạn");
+            return;
+        }
+
         Debug.Log("VA");
         if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
         {
-            Debug.Log("CHạm");
+           
+             
             if (collision.gameObject.CompareTag("Crosshair"))
             {
                 Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");
@@ -43,7 +54,7 @@ public class Bottle : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("Chạm");
+               
                 if (collision.gameObject.CompareTag("Crosshair"))
                 {
                     Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");

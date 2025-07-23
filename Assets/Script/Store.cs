@@ -21,6 +21,7 @@ public class Store : MonoBehaviour
     }
     void CloseStore()
     {
+      
         Button buttonClose = imageClose.GetComponent<Button>();
         buttonClose.onClick.RemoveAllListeners();
         buttonClose.onClick.AddListener(Hide);
@@ -28,7 +29,7 @@ public class Store : MonoBehaviour
     void Hide()
     {
         store.SetActive(false);
-
+        PlayerPrefs.SetInt("isPause", 0);
 
     }
 
