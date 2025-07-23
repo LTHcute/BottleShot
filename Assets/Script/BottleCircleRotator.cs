@@ -2,7 +2,7 @@
 
 public class BottleCircleRotator : MonoBehaviour
 {
-   public float rotationSpeed = 30f;
+   public float rotationSpeed = 20f;
     private bool isBroken = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UniPay;
+using UnityEngine;
 
 public class Bottle : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class Bottle : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         int currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
-        int myBulletCount = PlayerPrefs.GetInt("myBulletCount", 1);
+        int myBulletCount = DBManager.GetCurrency("bullets");
         if (currentBulletCount == 0 && myBulletCount ==0)
         {
             Debug.Log("Hết đạn");

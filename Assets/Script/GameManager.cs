@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("isPause", 0);
-        
+        Debug.Log(DBManager.GetCurrency("bullets").ToString());
        
         bottles = GameObject.FindGameObjectsWithTag("Bottle");
 
@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
     {
         TogglePause();
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
-        myBulletCount = DBManager.GetCurrency("myBulletCount");
+        myBulletCount =  DBManager.GetCurrency("bullets");
+
         Debug.Log($"myBulletCount:{myBulletCount}");
         if (currentBulletCount == 0 && myBulletCount ==0)
         {
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
 
 
                 myBulletCount = myBulletCount - 1;
-                PlayerPrefs.SetInt("myBulletCount", myBulletCount);
+                DBManager.SetCurrency("bullets", myBulletCount);
 
             }
             else if (Input.touchCount > 0 && Application.isMobilePlatform)
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour
                 if (touch.phase == TouchPhase.Began)
                 {
                     myBulletCount = myBulletCount - 1;
-                    PlayerPrefs.SetInt("myBulletCount", myBulletCount);
+                    DBManager.SetCurrency("bullets", myBulletCount);
                 }
             }
         }

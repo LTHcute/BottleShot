@@ -7,7 +7,7 @@ public class BottleCircleSpawner : MonoBehaviour
     [SerializeField] private int numberOfBottles; // Số lượng chai
     [SerializeField] private float radius = 5f; // Bán kính hình tròn
     [SerializeField] private BottleCircleRotator rotator; // Tham chiếu đến BottleCircleRotator
-    [SerializeField] private float initialRotationSpeed = 30f; // Tốc độ xoay ban đầu
+    [SerializeField] private float initialRotationSpeed = 20f; // Tốc độ xoay ban đầu
     [SerializeField] private int bulletsPerRound = 5; // Số đạn mỗi lượt
     [SerializeField] private GameObject bulletUIPrefab; // Prefab của UI đạn
     [SerializeField] private Transform bulletPanel; // Panel chứa các hình ảnh đạn
@@ -61,7 +61,7 @@ public class BottleCircleSpawner : MonoBehaviour
         }
 
         // Tăng tốc độ xoay lên 1.5 lần
-        currentRotationSpeed = currentRotationSpeed*spawnCount;
+        currentRotationSpeed = currentRotationSpeed + (currentRotationSpeed/spawnCount);
         if (rotator != null)
         {
             rotator.SetRotationSpeed(currentRotationSpeed); // Cập nhật tốc độ xoay

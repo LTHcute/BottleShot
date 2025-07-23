@@ -2555,7 +2555,7 @@ MonoBehaviour:
   numberOfBottles: 7
   radius: 350
   rotator: {fileID: 995258506}
-  initialRotationSpeed: 30
+  initialRotationSpeed: 20
   bulletsPerRound: 7
   bulletUIPrefab: {fileID: 9163493420442421817, guid: f768829c6af4b4a46b2c48adbedb9307, type: 3}
   bulletPanel: {fileID: 726486349}
