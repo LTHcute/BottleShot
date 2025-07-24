@@ -28,41 +28,41 @@ public class Bottle : MonoBehaviour
     }
 
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        int currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
-        int myBulletCount = DBManager.GetCurrency("bullets");
-        if (currentBulletCount == 0 && myBulletCount ==0)
-        {
-            Debug.Log("Hết đạn");
-            return;
-        }
+    //public void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    int currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
+    //    int myBulletCount = DBManager.GetCurrency("bullets");
+    //    if (currentBulletCount == 0 && myBulletCount ==0)
+    //    {
+    //        Debug.Log("Hết đạn");
+    //        return;
+    //    }
 
-        Debug.Log("VA");
-        if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
-        {
+    //    Debug.Log("VA");
+    //    if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
+    //    {
            
              
-            if (collision.gameObject.CompareTag("Crosshair"))
-            {
-                Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");
-                // Thêm logic, ví dụ: hủy bottle
-                Destroy(gameObject);
-            }
-        }
-        else if (Input.touchCount > 0 && Application.isMobilePlatform)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
+    //        if (collision.gameObject.CompareTag("Crosshair"))
+    //        {
+    //            Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");
+    //            // Thêm logic, ví dụ: hủy bottle
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //    else if (Input.touchCount > 0 && Application.isMobilePlatform)
+    //    {
+    //        Touch touch = Input.GetTouch(0);
+    //        if (touch.phase == TouchPhase.Began)
+    //        {
                
-                if (collision.gameObject.CompareTag("Crosshair"))
-                {
-                    Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");
-                    // Thêm logic, ví dụ: hủy bottle
-                    Destroy(gameObject);
-                }
-            }
-        }
-    }
+    //            if (collision.gameObject.CompareTag("Crosshair"))
+    //            {
+    //                Debug.Log($"Bottle {gameObject.name} collided with Crosshair at position: {transform.position}");
+    //                // Thêm logic, ví dụ: hủy bottle
+    //                Destroy(gameObject);
+    //            }
+    //        }
+    //    }
+    //}
 }

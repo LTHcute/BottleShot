@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UniPay;
+using UnityEngine.UI;
 public class BottleCircleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject bottlePrefab; // Prefab của chai
@@ -19,39 +20,39 @@ public class BottleCircleSpawner : MonoBehaviour
     private int currentBulletCount; // Số đạn hiện tại
     private GameObject[] bulletUIObjects; // Mảng lưu các đối tượng UI đạn
     private int spawnCount;
+   
 
     void Awake()
     {
         numberOfBottles = 7;
-        currentBulletCount = bulletsPerRound * 2; // Khởi tạo số đạn ban đầu
-        spawnCount = 0; // Khởi tạo số lần sinh lượt
-        Debug.Log("1");
-     
+        currentBulletCount = numberOfBottles; // Khởi tạo số đạn ban đầu
+        spawnCount = PlayerPrefs.GetInt("spawnCount", 1);
+
+
     }
     private void Start()
     {
-          PlayerPrefs.SetInt("spawnCount", 1);
+        
         myBulletCount.text = DBManager.GetCurrency("bullet").ToString();
         PlayerPrefs.SetInt("currentBulletCount", currentBulletCount);
         Debug.Log($"currentBulletCount start:{currentBulletCount}");
         // Đảm bảo pivot của GameObject cha ở (0, 0, 0)
         transform.localPosition = new Vector3(0f, 350f, 0f);
 
-        currentRotationSpeed = initialRotationSpeed; // Khởi tạo tốc độ xoay
+        currentRotationSpeed = initialRotationSpeed* spawnCount; // Khởi tạo tốc độ xoay
         if (rotator != null)
         {
             rotator.SetRotationSpeed(currentRotationSpeed); // Đặt tốc độ xoay ban đầu
         }
-
+      
         UpdateBulletUI(); // Cập nhật UI ban đầu
-        SpawnBottles();
+        SpawnBottles(spawnCount);
     }
 
-    private void SpawnBottles()
+    private void SpawnBottles(int spawnCount)
     {
         // Xóa các chai cũ nếu có
-        spawnCount++;
-        PlayerPrefs.SetInt("spawnCount", spawnCount);
+      
       
       
         UpdateSpawnCountUI();
@@ -63,20 +64,16 @@ public class BottleCircleSpawner : MonoBehaviour
         // Tăng tốc độ xoay lên 1.5 lần
         if(spawnCount!=1)
         {
-            currentRotationSpeed = currentRotationSpeed + (currentRotationSpeed / spawnCount);
+            currentRotationSpeed = currentRotationSpeed *spawnCount;
             if (rotator != null)
             {
                 rotator.SetRotationSpeed(currentRotationSpeed); // Cập nhật tốc độ xoay
             }
         }    
       
-        if (rotator != null)
-        {
-            rotator.SetRotationSpeed(currentRotationSpeed); // Cập nhật tốc độ xoay
-        }
 
         // Sinh đạn mới cho lượt mới
-        currentBulletCount = bulletsPerRound*2;
+        currentBulletCount = bulletsPerRound;
         PlayerPrefs.SetInt("currentBulletCount", currentBulletCount);
         UpdateBulletUI();
 
@@ -127,6 +124,7 @@ public class BottleCircleSpawner : MonoBehaviour
         }
 
         // Khởi tạo mảng lưu các hình ảnh đạn
+        if (currentBulletCount == 0) return;
         bulletUIObjects = new GameObject[currentBulletCount];
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", bulletUIObjects.Length);
 
@@ -159,7 +157,9 @@ public class BottleCircleSpawner : MonoBehaviour
         if (transform.childCount == 0)
         {
             Debug.Log("Tất cả chai đã bị hủy, tạo lượt chai mới!");
-            SpawnBottles(); // Tạo lại lượt chai mới
+            spawnCount = spawnCount + 1;
+            PlayerPrefs.SetInt("spawnCount", spawnCount);
+            SpawnBottles(spawnCount); // Tạo lại lượt chai mới
         }
     }
     // Getter để lấy số lần sinh lượt
@@ -172,4 +172,5 @@ public class BottleCircleSpawner : MonoBehaviour
     {
         return currentBulletCount;
     }
+
 }

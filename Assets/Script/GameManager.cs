@@ -6,6 +6,7 @@ using TMPro;
 using UniPay;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +15,11 @@ public class GameManager : MonoBehaviour
     public LayerMask crosshairLayer;
     private GameObject[] bottles;
     private Vector2[] lastPositions;
+    public AudioSource audioGunShot;
+    public AudioSource audioSource;
     private int currentBulletCount;
     private int myBulletCount;
+
     // public float collisionThreshold = 0.1f;
 
 
@@ -27,11 +31,14 @@ public class GameManager : MonoBehaviour
     public GameObject panelStore;
     public Image notications;
     public Image reset;
-
+    public Image gun;
 
  
     void Start()
     {
+        audioGunShot.gameObject.SetActive(false);
+        audioSource.Play();
+
         PlayerPrefs.SetInt("isPause", 0);
         Debug.Log(DBManager.GetCurrency("bullet").ToString());
        
@@ -44,16 +51,39 @@ public class GameManager : MonoBehaviour
             if (bottles[i] != null)
                 lastPositions[i] = bottles[i].transform.position;
         }
-        
 
 
+        PlayAgain();
         OpenMenu();
         HideMenu();
         OpenStore();
+        Shot();
     }
     void Update()
     {
         TogglePause();
+       
+    }
+
+
+    void Shot()
+    {
+        Button gunButton = gun.GetComponent<Button>();
+        gunButton.onClick.RemoveAllListeners();
+        gunButton.onClick.AddListener(CheckShot);
+    }    
+
+    void CheckShot()
+    {
+        audioGunShot.gameObject.SetActive(true);
+        if (audioGunShot != null)
+        {
+            audioGunShot.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or GunshotSound not assigned!");
+        }
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
         myBulletCount = DBManager.GetCurrency("bullet");
 
@@ -63,49 +93,39 @@ public class GameManager : MonoBehaviour
             ShowNoti();
             return;
         }
-
-        // Kiểm tra xem input có nằm trên phần tử UI không
-        if (EventSystem.current.IsPointerOverGameObject() ||
-            (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
-        {
-            // Input nằm trên phần tử UI, bỏ qua việc trừ đạn
-            return;
-        }
-
-        // Xử lý input cho Editor (chuột) hoặc Mobile (chạm)
         if (currentBulletCount != 0)
         {
-            if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
-            {
-                PlayerPrefs.SetInt("currentBulletCount", currentBulletCount - 1);
-            }
-            else if (Input.touchCount > 0 && Application.isMobilePlatform)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    PlayerPrefs.SetInt("currentBulletCount", currentBulletCount - 1);
-                }
-            }
+            PlayerPrefs.SetInt("currentBulletCount", currentBulletCount - 1);
+            Debug.Log($"currentBulletCount{currentBulletCount}");
         }
-        else if (currentBulletCount == 0 && myBulletCount != 0)
+        else
         {
-            if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
-            {
-                myBulletCount -= 1;
-                DBManager.SetCurrency("bullet", myBulletCount);
-            }
-            else if (Input.touchCount > 0 && Application.isMobilePlatform)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    myBulletCount -= 1;
-                    DBManager.SetCurrency("bullet", myBulletCount);
-                }
-            }
+            myBulletCount--;
+            DBManager.SetCurrency("bullet", myBulletCount);
         }
 
+            Collider2D crosshairCollider = crosshair.GetComponent<Collider2D>();
+
+        if (crosshairCollider != null)
+        {
+            // Kiểm tra xem collider của crosshair có va chạm với đối tượng có tag "bottle" không
+            Collider2D[] hits = Physics2D.OverlapPointAll(crosshairCollider.transform.position);
+
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Bottle"))
+                {
+                    Debug.Log("Crosshair va chạm với bottle!");
+                    Destroy(hit.gameObject);
+
+                    // Thực hiện hành động khi phát hiện va chạm
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Crosshair không có Collider2D!");
+        }
 
 
     }
@@ -202,16 +222,17 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void Reset()
+    void PlayAgain()
     {
         Button resetButton = reset.GetComponent<Button>();
         resetButton.onClick.RemoveAllListeners();
-        resetButton.onClick.AddListener(PlayAgain);
+        resetButton.onClick.AddListener(Play);
     }
-    void PlayAgain()
+    void Play()
     {
+        SceneManager.LoadScene("Play");
+    }
 
-    }    
 }
 
 
