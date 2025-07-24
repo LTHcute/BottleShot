@@ -2,12 +2,17 @@
 
 public class BottleCircleRotator : MonoBehaviour
 {
-   public float rotationSpeed = 30f;
+   public float rotationSpeed = 20f;
     private bool isBroken = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
+    }
+    public void SetRotationSpeed(float newSpeed)
+    {
+        rotationSpeed = newSpeed;
+        Debug.Log($"Tốc độ xoay được cập nhật: {rotationSpeed}");
     }
 
     // Update is called once per frame

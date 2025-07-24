@@ -5,6 +5,7 @@ public class ShotGun : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Image crosshair;
+    public Camera mainCamera;
     private void Start()
     {
       //Vector3 localPos = transform.localPosition;
@@ -13,7 +14,7 @@ public class ShotGun : MonoBehaviour
 
     private void Update()
     {
-
+       
     }
 
 

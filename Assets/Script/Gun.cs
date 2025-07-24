@@ -8,22 +8,22 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Gun : MonoBehaviour
 {
 
-    [SerializeField] private float moveDistance = 2.0f; // Khoảng cách di chuyển lên
-    [SerializeField] private float moveSpeed = 10f; // Tốc độ di chuyển lên
-    [SerializeField] private float returnSpeed = 10f; // Tốc độ trở về
-    [SerializeField] private float moveDuration = 0.3f; // Thời gian di chuyển lên
-    [SerializeField] private bool useWorldPosition = false; // Tùy chọn dùng world position
+    [SerializeField] private float moveDistance = 2.0f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float returnSpeed = 10f;
+    [SerializeField] private float moveDuration = 0.3f;
+    [SerializeField] private bool useWorldPosition = false;
 
-    private Vector3 originalPosition; // Vị trí ban đầu
-    private bool isMoving = false; // Trạng thái di chuyển
-    private float moveTimer = 0f; // Bộ đếm thời gian
-    private Vector3 targetPosition; // Vị trí đích khi di chuyển lên
+    private Vector3 originalPosition;
+    private bool isMoving = false;
+    private float moveTimer = 0f;
+    private Vector3 targetPosition;
 
     private void Start()
     {
         // Lưu vị trí ban đầu
         originalPosition = useWorldPosition ? transform.position : transform.localPosition;
-        Debug.Log("GunMoveUpDown initialized at " + (useWorldPosition ? "world" : "local") + " position: " + originalPosition);
+        //  Debug.Log("GunMoveUpDown initialized at " + (useWorldPosition ? "world" : "local") + " position: " + originalPosition);
     }
 
     private void Update()
@@ -31,12 +31,12 @@ public class Gun : MonoBehaviour
         // Kiểm tra input: Mouse cho Editor, Touch cho di động
         if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
         {
-            Debug.Log("Mouse click detected at: " + Input.mousePosition);
+            //  Debug.Log("Mouse click detected at: " + Input.mousePosition);
             if (!isMoving)
             {
                 isMoving = true;
                 moveTimer = 0f;
-                targetPosition = originalPosition + new Vector3(0, moveDistance, 0); // Di chuyển lên theo trục Y
+                targetPosition = originalPosition + new Vector3(0, moveDistance, 0);
             }
         }
         else if (Input.touchCount > 0 && Application.isMobilePlatform)
@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("Touch detected at: " + touch.position);
+                //    Debug.Log("Touch detected at: " + touch.position);
                 if (!isMoving)
                 {
                     isMoving = true;
@@ -68,7 +68,7 @@ public class Gun : MonoBehaviour
                     transform.position = newPosition;
                 else
                     transform.localPosition = newPosition;
-                Debug.Log("Moving up to " + (useWorldPosition ? "world" : "local") + ": " + newPosition);
+                // Debug.Log("Moving up to " + (useWorldPosition ? "world" : "local") + ": " + newPosition);
             }
             // Giai đoạn trở về
             else
@@ -79,7 +79,7 @@ public class Gun : MonoBehaviour
                     transform.position = newPosition;
                 else
                     transform.localPosition = newPosition;
-                Debug.Log("Returning to " + (useWorldPosition ? "world" : "local") + ": " + newPosition);
+                // Debug.Log("Returning to " + (useWorldPosition ? "world" : "local") + ": " + newPosition);
                 if (Vector3.Distance(currentPosition, originalPosition) < 0.01f)
                 {
                     if (useWorldPosition)
@@ -87,7 +87,7 @@ public class Gun : MonoBehaviour
                     else
                         transform.localPosition = originalPosition;
                     isMoving = false;
-                    Debug.Log("Move completed, returned to " + (useWorldPosition ? "world" : "local") + ": " + originalPosition);
+                    //  Debug.Log("Move completed, returned to " + (useWorldPosition ? "world" : "local") + ": " + originalPosition);
                 }
             }
         }
