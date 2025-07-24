@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categoryList:
   - referenceID: 39841d36-a030-4270-988c-b1d99708b47f
-    ID: bullets
+    ID: bullet
     storeIDs: []
   currencyList:
   - referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
-    ID: bullets
+    ID: bullet
     baseAmount: 20
     maxAmount: 0
     icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}

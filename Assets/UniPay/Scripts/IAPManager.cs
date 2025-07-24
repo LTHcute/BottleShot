@@ -329,7 +329,9 @@ namespace UniPay
         public static void Purchase(string productID)
         {
             IAPProduct product = GetIAPProduct(productID);
-            if(product == null)
+            Debug.Log("PurchaseIap");
+            Debug.Log($"PurchaseIap{productID}");
+            if (product == null)
 			{
 			    if(isDebug) Debug.LogError("Product " + productID + " not found in IAP Settings.");
 				return;
@@ -349,11 +351,12 @@ namespace UniPay
                 case false:
                     if (controller == null)
                     {
+                        Debug.Log($"1{productID}");
                         OnPurchaseFailed("Billing is not available.");
                         if (isDebug) Debug.LogError("Unity IAP is not initialized correctly! Please check your billing settings.");
                         return;
                     }
-
+                    Debug.Log($"2{productID}");
                     Product p = controller.products.WithID(productID);
                     IAPCategory category = GetInstance().asset.categoryList.Find(x => x.referenceID == product.category.referenceID);
                     controller.InitiatePurchase(p);
@@ -365,16 +368,18 @@ namespace UniPay
                     //double check here again in case this method gets called from somewhere directly
                     if (product.type == ProductType.NonConsumable && DBManager.GetPurchase(productID) > 0)
                     {
+                        Debug.Log($"3{productID}");
                         OnPurchaseFailed("Product already owned.");
                         return;
                     }
-
+                    Debug.Log($"4{productID}");
                     //check whether the player has enough funds locally
                     bool canPurchase = DBManager.CanPurchaseVirtual(product);
                     if (isDebug) Debug.Log("Purchasing virtual product " + productID + ", canPurchase: " + canPurchase);
 
                     if (!canPurchase)
                     {
+                        Debug.Log($"PurchaseIap{productID}");
                         OnPurchaseFailed("Not enough currency.");
                         return;
                     }

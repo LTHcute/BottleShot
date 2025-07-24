@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UniPay;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("isPause", 0);
-        Debug.Log(DBManager.GetCurrency("bullets").ToString());
+        Debug.Log(DBManager.GetCurrency("bullet").ToString());
        
         bottles = GameObject.FindGameObjectsWithTag("Bottle");
 
@@ -54,30 +55,35 @@ public class GameManager : MonoBehaviour
     {
         TogglePause();
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
-        myBulletCount =  DBManager.GetCurrency("bullets");
+        myBulletCount = DBManager.GetCurrency("bullet");
 
-        Debug.Log($"myBulletCount:{myBulletCount}");
-        if (currentBulletCount == 0 && myBulletCount ==0)
+        // Nếu không còn đạn, hiển thị thông báo và thoát
+        if (currentBulletCount == 0 && myBulletCount == 0)
         {
             ShowNoti();
             return;
         }
-        else if(currentBulletCount != 0)
+
+        // Kiểm tra xem input có nằm trên phần tử UI không
+        if (EventSystem.current.IsPointerOverGameObject() ||
+            (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
         {
-            // Kiểm tra input: Mouse cho Editor, Touch cho di động
+            // Input nằm trên phần tử UI, bỏ qua việc trừ đạn
+            return;
+        }
+
+        // Xử lý input cho Editor (chuột) hoặc Mobile (chạm)
+        if (currentBulletCount != 0)
+        {
             if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
             {
-
-
                 PlayerPrefs.SetInt("currentBulletCount", currentBulletCount - 1);
-
             }
             else if (Input.touchCount > 0 && Application.isMobilePlatform)
             {
                 Touch touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
-
                     PlayerPrefs.SetInt("currentBulletCount", currentBulletCount - 1);
                 }
             }
@@ -86,23 +92,20 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && !Application.isMobilePlatform)
             {
-
-
-                myBulletCount = myBulletCount - 1;
-                DBManager.SetCurrency("bullets", myBulletCount);
-
+                myBulletCount -= 1;
+                DBManager.SetCurrency("bullet", myBulletCount);
             }
             else if (Input.touchCount > 0 && Application.isMobilePlatform)
             {
                 Touch touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began)
                 {
-                    myBulletCount = myBulletCount - 1;
-                    DBManager.SetCurrency("bullets", myBulletCount);
+                    myBulletCount -= 1;
+                    DBManager.SetCurrency("bullet", myBulletCount);
                 }
             }
         }
-        DBManager.SetCurrency("myBulletCount", myBulletCount);
+
 
 
     }

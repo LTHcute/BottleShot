@@ -31,7 +31,7 @@ public class BottleCircleSpawner : MonoBehaviour
     private void Start()
     {
           PlayerPrefs.SetInt("spawnCount", 1);
-        myBulletCount.text = DBManager.GetCurrency("bullets").ToString();
+        myBulletCount.text = DBManager.GetCurrency("bullet").ToString();
         PlayerPrefs.SetInt("currentBulletCount", currentBulletCount);
         Debug.Log($"currentBulletCount start:{currentBulletCount}");
         // Đảm bảo pivot của GameObject cha ở (0, 0, 0)
@@ -61,7 +61,15 @@ public class BottleCircleSpawner : MonoBehaviour
         }
 
         // Tăng tốc độ xoay lên 1.5 lần
-        currentRotationSpeed = currentRotationSpeed + (currentRotationSpeed/spawnCount);
+        if(spawnCount!=1)
+        {
+            currentRotationSpeed = currentRotationSpeed + (currentRotationSpeed / spawnCount);
+            if (rotator != null)
+            {
+                rotator.SetRotationSpeed(currentRotationSpeed); // Cập nhật tốc độ xoay
+            }
+        }    
+      
         if (rotator != null)
         {
             rotator.SetRotationSpeed(currentRotationSpeed); // Cập nhật tốc độ xoay
@@ -104,7 +112,7 @@ public class BottleCircleSpawner : MonoBehaviour
     // Hàm cập nhật UI hiển thị đạn
     public void UpdateBulletUI()
     {
-        Debug.Log("update bullet UI");
+       
      //   Debug.Log($"bulletUIObjects:{bulletUIObjects.Length}");
         // Xóa các hình ảnh đạn cũ
         if (bulletUIObjects != null)
@@ -121,9 +129,7 @@ public class BottleCircleSpawner : MonoBehaviour
         // Khởi tạo mảng lưu các hình ảnh đạn
         bulletUIObjects = new GameObject[currentBulletCount];
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", bulletUIObjects.Length);
-        //PlayerPrefs.Save();
-        Debug.Log($"currentBulletCount updtae:{currentBulletCount}");
-        // Tạo các hình ảnh đạn mới
+
         for (int i = 0; i < currentBulletCount; i++)
         {
             if (bulletUIPrefab != null && bulletPanel != null)
@@ -147,7 +153,7 @@ public class BottleCircleSpawner : MonoBehaviour
 
     void Update()
     {
-        myBulletCount.text = DBManager.GetCurrency("bullets").ToString();
+        myBulletCount.text = DBManager.GetCurrency("bullet").ToString();
         UpdateBulletUI();
         // Kiểm tra số lượng chai (các con của transform)
         if (transform.childCount == 0)

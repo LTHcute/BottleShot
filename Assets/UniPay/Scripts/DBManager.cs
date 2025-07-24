@@ -3,8 +3,8 @@
  *  You shall not license, sublicense, sell, resell, transfer, assign, distribute or otherwise make available to any third party the Service or the Content. */
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
 
@@ -12,13 +12,14 @@ namespace UniPay
 {
     using System.IO;
     using System.Security.Cryptography;
-    using UnityEngine.Purchasing;
     using UniPay.SimpleJSON;
+    using Unity.VisualScripting;
+    using UnityEngine.Purchasing;
 
-    #if ACTK_IS_HERE
+
+#if ACTK_IS_HERE
     using CodeStage.AntiCheat.Storage;
-    #endif
-
+#endif
     /// <summary>
     /// Stores IAP related data such as all purchases, selected items and ingame currency.
     /// Makes use of the JSON format and simple encryption. You should only modify below
@@ -286,6 +287,7 @@ namespace UniPay
         /// </summary>
         public static void ConsumePurchase(string productID, int amount = 0)
         {
+          
             int newValue = instance.gameData[contentKey][productID].AsInt - Mathf.Clamp(amount, 0, int.MaxValue);
 
             if (amount == 0 || newValue <= 0)
@@ -410,6 +412,8 @@ namespace UniPay
         /// </summary>
         public static int AddCurrency(string currencyID, int amount)
         {
+            Debug.Log($"AddCurrency{currencyID}");
+            Debug.Log($"AddCurrency{amount}");
             IAPCurrency currency = IAPManager.GetInstance().asset.currencyList.Find(x => x.ID == currencyID);
             if (currency == null) return 0;
 
@@ -488,6 +492,7 @@ namespace UniPay
         /// </summary>
         public static void PurchaseVirtual(IAPProduct product)
         {
+            Debug.Log($"PurchaseVirtual");
             //the player has enough funds, loop over each exchange and substract costs
             foreach (IAPExchangeObject exchange in product.priceList)
             {

@@ -325,6 +325,7 @@ namespace UniPay
         /// </summary>
         public void Purchase()
         {
+            Debug.Log("PurchaseShopItem");
             //simulate 'double tap to purchase'
             if (askToBuy)
             {
@@ -335,7 +336,7 @@ namespace UniPay
                     return;
                 }
             }
-
+            Debug.Log($"PurchaseShopItem{productID}");
             IAPManager.Purchase(productID);
         }
 
