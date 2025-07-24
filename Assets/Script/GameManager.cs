@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     private int currentBulletCount;
     private int myBulletCount;
+    public GameObject breakBottlePrefab;
 
     // public float collisionThreshold = 0.1f;
 
@@ -86,6 +87,8 @@ public class GameManager : MonoBehaviour
         }
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
         myBulletCount = DBManager.GetCurrency("bullet");
+        GameObject[] bts = GameObject.FindGameObjectsWithTag("Bottle");// lấy cái này để lấy vị trí của bottle xong để tạo breakbottleprefab
+        Debug.Log($"bottles:{bottles.Length}");
 
         // Nếu không còn đạn, hiển thị thông báo và thoát
         if (currentBulletCount == 0 && myBulletCount == 0)
@@ -115,10 +118,9 @@ public class GameManager : MonoBehaviour
             {
                 if (hit.CompareTag("Bottle"))
                 {
-                    Debug.Log("Crosshair va chạm với bottle!");
-                    Destroy(hit.gameObject);
 
-                    // Thực hiện hành động khi phát hiện va chạm
+                    
+                    Destroy(hit.gameObject);
                 }
             }
         }

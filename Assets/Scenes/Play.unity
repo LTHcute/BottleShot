@@ -4042,6 +4042,7 @@ MonoBehaviour:
     m_Bits: 512
   audioGunShot: {fileID: 70232086}
   audioSource: {fileID: 343184161}
+  breakBottlePrefab: {fileID: 325471012279537083, guid: 27421d629ede90c42be696468a6363b3, type: 3}
   pause: {fileID: 1334644695}
   continueButton: {fileID: 577419225}
   store: {fileID: 495507877}
