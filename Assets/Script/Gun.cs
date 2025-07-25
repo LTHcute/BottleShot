@@ -8,10 +8,10 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class Gun : MonoBehaviour
 {
 
-    [SerializeField] private float moveDistance = 2.0f;
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float returnSpeed = 10f;
-    [SerializeField] private float moveDuration = 0.3f;
+    [SerializeField] private float moveDistance = 25f;
+    [SerializeField] private float moveSpeed = 200f;
+    [SerializeField] private float returnSpeed = 100f;
+    [SerializeField] private float moveDuration = 0.1f;
     [SerializeField] private bool useWorldPosition = false;
 
     private Vector3 originalPosition;

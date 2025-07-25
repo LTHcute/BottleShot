@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd3e449910c486c8bce7d5077616cd5, type: 3}
+  m_Name: BuildValidatorSettings
+  m_EditorClassIdentifier: 
+  CreateStoreListing: 1
+  GenerateCsv: 0
+  Icon: {fileID: 2800000, guid: cc9ed9d249b4a1140af5e5248125ce36, type: 3}
+  FeatureImage: {fileID: 2800000, guid: c5b52798ae0708f49be348d3e6943d05, type: 3}
+  Screenshots:
+  - {fileID: 2800000, guid: 507a9429f9c6db64688c813c963caaf4, type: 3}
+  - {fileID: 2800000, guid: 6217e1c4413e6cd4a928e3e896aa74d0, type: 3}
+  - {fileID: 2800000, guid: 0a520f1d3d981964bb2e55e9a3d290cd, type: 3}
+  InfoText: {fileID: 0}
+  KeystoreFile: {fileID: 0}
+  LandscapeGame: 0
+  APKBuild: 1
+  UploadToDrive: 0
+  OverWriteStoreListing: 0

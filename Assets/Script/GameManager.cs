@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     private int currentBulletCount;
     private int myBulletCount;
-    public GameObject breakBottlePrefab;
+     public GameObject boom;
 
     // public float collisionThreshold = 0.1f;
 
-
+    public Transform canvasTransform;
     private int isPause ;
     public Image pause;
     public Image continueButton;
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         TogglePause();
        
     }
-
+ 
 
     void Shot()
     {
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     void CheckShot()
     {
+      
         audioGunShot.gameObject.SetActive(true);
         if (audioGunShot != null)
         {
@@ -87,8 +88,7 @@ public class GameManager : MonoBehaviour
         }
         currentBulletCount = PlayerPrefs.GetInt("currentBulletCount", 1);
         myBulletCount = DBManager.GetCurrency("bullet");
-        GameObject[] bts = GameObject.FindGameObjectsWithTag("Bottle");// lấy cái này để lấy vị trí của bottle xong để tạo breakbottleprefab
-        Debug.Log($"bottles:{bottles.Length}");
+      
 
         // Nếu không còn đạn, hiển thị thông báo và thoát
         if (currentBulletCount == 0 && myBulletCount == 0)
@@ -109,6 +109,14 @@ public class GameManager : MonoBehaviour
 
             Collider2D crosshairCollider = crosshair.GetComponent<Collider2D>();
 
+        //GameObject[] bts = GameObject.FindGameObjectsWithTag("Bottle");// lấy cái này để lấy vị trí của bottle xong để tạo breakbottleprefab
+        //List<Vector3> bottlePositions = new List<Vector3>();
+
+        //foreach (GameObject bottle in bts)
+        //{
+        //    if (bottle != null)
+        //        bottlePositions.Add(bottle.transform.position);
+        //}
         if (crosshairCollider != null)
         {
             // Kiểm tra xem collider của crosshair có va chạm với đối tượng có tag "bottle" không
@@ -119,7 +127,9 @@ public class GameManager : MonoBehaviour
                 if (hit.CompareTag("Bottle"))
                 {
 
-                    
+                    GameObject effect = Instantiate(boom, canvasTransform); // boom là prefab UI (Image)
+                    effect.transform.position = hit.transform.position;
+                    Destroy(effect, 0.1f);
                     Destroy(hit.gameObject);
                 }
             }

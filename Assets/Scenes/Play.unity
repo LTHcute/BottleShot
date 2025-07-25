@@ -2746,7 +2746,7 @@ MonoBehaviour:
   numberOfBottles: 7
   radius: 350
   rotator: {fileID: 995258506}
-  initialRotationSpeed: 20
+  initialRotationSpeed: 10
   bulletsPerRound: 7
   bulletUIPrefab: {fileID: 9163493420442421817, guid: f768829c6af4b4a46b2c48adbedb9307, type: 3}
   bulletPanel: {fileID: 726486349}
@@ -2764,7 +2764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5011e35aa9ba144928f978435d8913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 50
 --- !u!1001 &1000108658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2910,7 +2910,7 @@ GameObject:
   - component: {fileID: 1204788443}
   - component: {fileID: 1204788442}
   - component: {fileID: 1204788444}
-  - component: {fileID: 1204788446}
+  - component: {fileID: 1204788445}
   m_Layer: 5
   m_Name: Gun
   m_TagString: Untagged
@@ -2987,12 +2987,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37652472e05f3f4f8404f90c7c3b9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 500
-  moveSpeed: 100
+  moveDistance: 25
+  moveSpeed: 200
   returnSpeed: 100
   moveDuration: 0.1
   useWorldPosition: 0
---- !u!114 &1204788446
+--- !u!114 &1204788445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4042,7 +4042,8 @@ MonoBehaviour:
     m_Bits: 512
   audioGunShot: {fileID: 70232086}
   audioSource: {fileID: 343184161}
-  breakBottlePrefab: {fileID: 325471012279537083, guid: 27421d629ede90c42be696468a6363b3, type: 3}
+  boom: {fileID: 2802945185202258230, guid: 1a6bc7100eec4b2489ce999f3e2c9d2b, type: 3}
+  canvasTransform: {fileID: 1230242632}
   pause: {fileID: 1334644695}
   continueButton: {fileID: 577419225}
   store: {fileID: 495507877}
