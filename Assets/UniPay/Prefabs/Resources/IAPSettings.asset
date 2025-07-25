@@ -279,6 +279,279 @@ MonoBehaviour:
       label: 
     nextUpgrade:
       rid: -2
+  - referenceID: ae87a6c3-c48a-4719-9681-57fea260460c
+    ID: sub_pack_1
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 1
+    description: Contains x5 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 1.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448074
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 5
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 430521ce-b876-4bdc-b44f-e8d7d06d9fe4
+    ID: sub_pack_2
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 2
+    description: Contains x10 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 2.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448076
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 10
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: a228e51f-f92f-4754-97cc-9aff187cbbbb
+    ID: sub_pack_3
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 3
+    description: Contains x15 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 4.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448077
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 15
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 34aa243e-eddd-4417-93a2-5dd75ac68b9e
+    ID: sub_pack_4
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 4
+    description: Contains x20 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 7.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448078
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 20
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 9bab2ff4-966a-49a9-9e9e-55f9e3051a9c
+    ID: sub_pack_5
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 5
+    description: Contains x25 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 9.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448079
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 25
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 255e6453-a4b8-479c-a2af-efefd204dfa0
+    ID: sub_pack_6
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 6
+    description: Contains x30 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 14.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448080
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 30
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
+  - referenceID: 4aaff869-fd80-4bbd-9adf-5b1ac52a58a4
+    ID: sub_pack_7
+    storeIDs: []
+    category:
+      rid: 8604102369640448073
+    type: 2
+    title: Subscription pack 7
+    description: Contains x35 bullets
+    discount: 0
+    fetch: 1
+    icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    priceList:
+    - type: 0
+      currency:
+        rid: -2
+      product:
+        rid: -2
+      amount: 0
+      realPrice: 19.99$
+    rewardList:
+    - type: 2
+      currency:
+        rid: -2
+      product:
+        rid: 8604102369640448081
+      amount: 1
+      realPrice: 
+    - type: 1
+      currency:
+        rid: 8604102369640448075
+      product:
+        rid: -2
+      amount: 35
+      realPrice: 
+    requirement:
+      pairs: []
+      label: 
+    nextUpgrade:
+      rid: -2
   customStoreConfig:
     PayPal:
       currencyCode: USD
@@ -322,3 +595,311 @@ MonoBehaviour:
         baseAmount: 0
         maxAmount: 0
         icon: {fileID: 21300000, guid: 815c2d1cc82c7f3468708b31017e1ab2, type: 3}
+    - rid: 8604102369640448073
+      type: {class: IAPCategory, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 39841d36-a030-4270-988c-b1d99708b47f
+        ID: bullet
+        storeIDs: []
+    - rid: 8604102369640448074
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: ae87a6c3-c48a-4719-9681-57fea260460c
+        ID: sub_pack_1
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 1
+        description: Contains x5 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 1.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448074
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 5
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448075
+      type: {class: IAPCurrency, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 220be08c-be6d-4e63-a0c7-48b629257b77
+        ID: bullet
+        baseAmount: 20
+        maxAmount: 0
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+    - rid: 8604102369640448076
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 430521ce-b876-4bdc-b44f-e8d7d06d9fe4
+        ID: sub_pack_2
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 2
+        description: Contains x10 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 2.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448076
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 10
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448077
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: a228e51f-f92f-4754-97cc-9aff187cbbbb
+        ID: sub_pack_3
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 3
+        description: Contains x15 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 4.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448077
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 15
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448078
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 34aa243e-eddd-4417-93a2-5dd75ac68b9e
+        ID: sub_pack_4
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 4
+        description: Contains x20 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 7.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448078
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 20
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448079
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 9bab2ff4-966a-49a9-9e9e-55f9e3051a9c
+        ID: sub_pack_5
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 5
+        description: Contains x25 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 9.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448079
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 25
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448080
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 255e6453-a4b8-479c-a2af-efefd204dfa0
+        ID: sub_pack_6
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 6
+        description: Contains x30 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 14.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448080
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 30
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2
+    - rid: 8604102369640448081
+      type: {class: IAPProduct, ns: UniPay, asm: Assembly-CSharp}
+      data:
+        referenceID: 4aaff869-fd80-4bbd-9adf-5b1ac52a58a4
+        ID: sub_pack_7
+        storeIDs: []
+        category:
+          rid: 8604102369640448073
+        type: 2
+        title: Subscription pack 7
+        description: Contains x35 bullets
+        discount: 0
+        fetch: 1
+        icon: {fileID: 1670767391438646161, guid: f70ece9e6e8157c479ced26b39782987, type: 3}
+        priceList:
+        - type: 0
+          currency:
+            rid: -2
+          product:
+            rid: -2
+          amount: 0
+          realPrice: 19.99$
+        rewardList:
+        - type: 2
+          currency:
+            rid: -2
+          product:
+            rid: 8604102369640448081
+          amount: 1
+          realPrice: 
+        - type: 1
+          currency:
+            rid: 8604102369640448075
+          product:
+            rid: -2
+          amount: 35
+          realPrice: 
+        requirement:
+          pairs: []
+          label: 
+        nextUpgrade:
+          rid: -2

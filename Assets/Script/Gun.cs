@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.LightTransport;
+
 using UnityEngine.UIElements;
-using static Unity.Burst.Intrinsics.X86.Avx;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 public class Gun : MonoBehaviour
 {
